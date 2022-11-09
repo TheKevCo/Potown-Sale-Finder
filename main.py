@@ -29,6 +29,7 @@ for item in names_list:
         current_sale.remove(item)
     else:
         sale_item = Sale.create(name=f"{item}")
+        # code for emailing would be done here.
 
 # code for deletion of non-sale items. If items we're not found in name_list, they are not on-sale anymore and must be
 # deleted
@@ -36,6 +37,3 @@ for item in names_list:
 for sale_item in Sale.query():
     if sale_item.name in current_sale:
         sale_item.delete()
-
-
-
